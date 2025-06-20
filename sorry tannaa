@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>To My Tanna 💖</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom right, #ffe5ec, #ffd6e0);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    .scrapbook {
+      background: #fff0f5;
+      box-shadow: 0 0 25px rgba(0,0,0,0.1);
+      width: 80%;
+      max-width: 700px;
+      border-radius: 16px;
+      padding: 2rem;
+      margin: 2rem;
+      text-align: center;
+      position: relative;
+    }
+    .letter {
+      display: none;
+    }
+    .letter.active {
+      display: block;
+    }
+    .nav-buttons {
+      margin-top: 20px;
+    }
+    button {
+      background-color: #ff7f9c;
+      border: none;
+      padding: 10px 20px;
+      margin: 0 10px;
+      border-radius: 12px;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background-color: #ff4d72;
+    }
+    h1 {
+      font-size: 28px;
+      color: #d6336c;
+    }
+    p {
+      font-size: 18px;
+      line-height: 1.8;
+      color: #333;
+    }
+    audio {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="scrapbook">
+    <h1>To My Dearest Tanna 💌</h1>
+    <div class="letter active">
+      <p>My sweetest love,
+        I waited for you for 3 years, and every second was worth it because it brought me to you. You're the melody my heart always searched for, the calm in my chaos. Being far from you is like holding my breath—every day without you, I ache. I just want you back in my arms.
+      </p>
+    </div>
+    <div class="letter">
+      <p>Tanna,
+        You are not just my girlfriend, you are my first priority, my hope, my peace, and my dream. I know long distance hurts… but it will never break us. I’m still here, holding on to us. Waiting. Hoping. Loving.
+      </p>
+    </div>
+    <div class="letter">
+      <p>Babu,
+        Your smile is my light. Your laugh is music to my soul. Every moment with you is my favorite memory. Even in your silence, I find comfort. I love you in a way that words can barely express. I just want you to know that I'm never giving up on us.
+      </p>
+    </div>
+    <div class="letter">
+      <p>Jaan,
+        I know I mess up. I know I make mistakes. But my love is real and it’s forever. I want to spend my whole life saying sorry, not because I have to — but because you matter more to me than my pride. I miss your voice. I miss us.
+      </p>
+    </div>
+    <div class="letter">
+      <p>Forever Yours,
+        Tanna, I love you more than anything. I promise to never let go. Every moment apart, I hold you in my heart. This scrapbook is just a little piece of my heart for you. Please forgive me and let’s create new memories together again. 🌸
+      </p>
+    </div>
+    <div class="nav-buttons">
+      <button onclick="prevLetter()">← Previous</button>
+      <button onclick="nextLetter()">Next →</button>
+    </div>
+  </div>
+
+  <audio autoplay loop>
+    <source src="https://cdn.pixabay.com/audio/2022/03/15/audio_222a99f24e.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <script>
+    let current = 0;
+    const letters = document.querySelectorAll(".letter");
+
+    function showLetter(index) {
+      letters.forEach((l, i) => l.classList.toggle("active", i === index));
+    }
+
+    function nextLetter() {
+      current = (current + 1) % letters.length;
+      showLetter(current);
+    }
+
+    function prevLetter() {
+      current = (current - 1 + letters.length) % letters.length;
+      showLetter(current);
+    }
+  </script>
+</body>
+</html>
